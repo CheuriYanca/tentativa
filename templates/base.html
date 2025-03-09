@@ -12,7 +12,7 @@
             background-color: #f4f6f9;
         }
         .navbar-custom {
-            background-color: #2a3d6d;
+            background-color: 	#A0522D;
         }
         .navbar-custom .navbar-brand {
             font-size: 1.5rem;
@@ -25,8 +25,10 @@
             color: #f8f9fa;
         }
         footer {
-            background-color: #2a3d6d;
+            background-color: 	#A0522D;
             color: white;
+            bottom: 0;
+            height:50%;
         }
         footer a {
             color: #f8f9fa;
@@ -41,8 +43,8 @@
     <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('login') }}">
-                <img src="static/images/image.png" width="35px" alt="Logo">
-                <strong>Colibri</strong>
+                <img src="static/imagens/M.png" width="60px" >
+                <strong>MulherComp</strong>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -56,7 +58,7 @@
                         <a class="nav-link" href="{{ url_for('cadastro') }}">Cadastro</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Contato</a>
+                        <a class="nav-link" href="{{ url_for('contato') }}">Contato</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Sobre</a>
@@ -72,9 +74,9 @@
     </div>
 
     <!-- Rodapé -->
-    <footer class="text-center py-4">
+    <footer class="text-center py-0">
         <div class="container">
-            <p>&copy; 2024 Sistema Colibri. Todos os direitos reservados.</p>
+            <p>&copy; 2025 MulherComp. Todos os direitos reservados.</p>
             <p>
                 <a href="#" class="me-3">Política de Privacidade</a>
                 <a href="#">Termos de Uso</a>
