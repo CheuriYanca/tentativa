@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-12">
+            <div class="bg-light p-4 rounded-3 shadow-lg">
+                <h2 class="text-center mb-4">Cadastro</h2>
+
+                {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <form action="{{ url_for('cadastro') }}" method="post" id="cadastroForm" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nome Completo:</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cpf" class="form-label">CPF:</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail:</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Telefone:</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Endereço:</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Digite seu endereço" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Senha:</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" required>
+                        <small class="form-text text-muted">Sua senha deve conter:</small>
+                        <ul class="list-unstyled mt-2" id="passwordRequirements">
+                            <li id="length" class="text-danger">✔ No mínimo 6 dígitos</li>
+                            <li id="uppercase" class="text-danger">✔ Pelo menos 1 letra maiúscula</li>
+                            <li id="number" class="text-danger">✔ Pelo menos 1 número</li>
+                            <li id="special" class="text-danger">✔ Pelo menos 1 caractere especial (!@#$%^&*)</li>
+                        </ul>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirm_password" class="form-label">Confirmação de Senha:</label>
+                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirme sua senha" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+                    </div>
+                </form>
+
+                <div class="text-center mt-3">
+                    <p class="text-muted">Já tem uma conta? <a href="{{ url_for('login') }}" class="text-decoration-none text-primary">Faça login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
