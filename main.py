@@ -14,8 +14,8 @@ def login():
 
 @app_Cheuri.route("/login", methods = ["POST"])
 def autenticar():
-    email = request.from.get("email")
-    senha = request.from.get("passoword")
+    email = request.form.get("email")
+    senha = request.form.get("passoword")
     
     if email == Usuario["email"] and senha == Usuario["senha"]:
         flash("Lpgin realizado com sucesso!", "sucess")
